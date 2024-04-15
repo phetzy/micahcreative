@@ -1,12 +1,12 @@
  <div class="container mx-auto mt-auto px-4 grid grid-cols-4 min-h-96">
     <div class="grid grid-cols-1 m-2">
-      <div class="grid grid-cols-1 m-2">
+      <div class="grid grid-cols-1 m-2 p-2">
         <h1 class="text-6xl text-left" data-stagger="0.02" data-duration="1" data-delay=".1"
             data-animation="charsUp">
           {{ section.settings.title }}
         </h1>
       </div>
-      <div class="grid grid-cols-1">
+      <div class="grid grid-cols-1 m-2 p-4">
         <h5 class="text-gray-400 text-sm text-left" data-stagger="0.1" data-duration="1"
             data-delay=".1" data-animation="linesUp">
           {{ section.settings.sub_title }}
@@ -15,7 +15,7 @@
     </div>
    {% for block in section.blocks  %}
     {% assign product = block.settings.product %}
-    <div class="grid grid-cols-*">
+    <div class="grid grid-cols-* m-2 p-4">
       <div class="alioth-single-product">
         <a href="{{ product.url }}">
           <div class="asp-image">
