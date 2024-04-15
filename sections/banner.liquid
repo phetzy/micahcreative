@@ -10,15 +10,31 @@
             <img src="{{ 'shopping_cart.svg' | asset_url }}" width="40" class="ml-auto"></img>
         </div>
     </div>
-    <div id="background-image" class="w-full">
-        <img src={{ 'Micah_web_desktop.png' | asset_url }} max-width="767.82px"></img>
+    <div id="background-image" class="mx-auto overflow-y-auto">
+        <img src={{ 'Micah_web_desktop.png' | asset_url }}" class="mx-auto overflow-y-auto"></img>
     </div>
 </section>
 
 {% schema %}
 {
     "name": "Banner",
-    "settings": [],
+    "settings": [
+    {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image Desktop"
+    },
+    {
+        "type": "image_picker",
+        "id": "image_mb",
+        "label": "Image Mobile"
+    },
+    {
+        "type": "url",
+        "id": "url",
+        "label": "Url"
+    }
+    ],
     "presets": [
     {
         "name": "banner"

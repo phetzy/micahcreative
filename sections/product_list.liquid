@@ -1,0 +1,91 @@
+ <div class="container mx-auto mt-auto px-4 grid grid-cols-4 min-h-96">
+    <div class="grid grid-cols-1 m-2">
+      <div class="grid grid-cols-1 m-2">
+        <h1 class="text-6xl text-left" data-stagger="0.02" data-duration="1" data-delay=".1"
+            data-animation="charsUp">
+          {{ section.settings.title }}
+        </h1>
+      </div>
+      <div class="grid grid-cols-1">
+        <h5 class="text-gray-400 text-sm text-left" data-stagger="0.1" data-duration="1"
+            data-delay=".1" data-animation="linesUp">
+          {{ section.settings.sub_title }}
+        </h5>
+      </div>
+    </div>
+   {% for block in section.blocks  %}
+    {% assign product = block.settings.product %}
+    <div class="grid grid-cols-*">
+      <div class="alioth-single-product">
+        <a href="{{ product.url }}">
+          <div class="asp-image">
+            <img alt="{{ product.featured_image.alt | default : product.title }}" src="{{ product.featured_media | image_url: width: 800 }}">
+          </div>
+          <div class="asp-det">
+            <div class="asp-product-rate">
+              <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+            </div>
+            <div class="asp-product-title">{{ product.title }}</div>
+            <div class="asp-product-price">{{ product.price | money }}</div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+   {% endfor %}
+ </div>
+ {% schema %}
+  {
+    "name": "Section Products List",
+    "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+		  "default" : "Explore our<br>best sellers."
+        },
+		{
+          "type": "textarea",
+          "id": "sub_title",
+          "label": "SubTitle",
+		  "default" : "Nulla facilisi. Suspendisse imperdiet congue nulla, eu molestie magna gravida vel. Vestibulum fermentum nisi non efficitur placerat."
+        }
+	],
+	"blocks": [
+     {
+      "type": "product",
+      "name": "product",
+      "settings": [
+	  {
+        "type": "product",
+        "id": "product",
+        "label": "Products"
+      }
+      ]
+     }
+	],
+     "presets": [
+    {
+      "name": "Products List",
+      "blocks": [
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        }
+      ]
+    }
+  ]
+  }
+{% endschema %}
+

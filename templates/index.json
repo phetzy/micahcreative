@@ -2,10 +2,64 @@
     "sections": {
             "banner": {
                 "type": "banner",
-                "settings": {}
+                "settings": {
+                    "image": "",
+                    "image_mb": "",
+                    "url": "#"
+                }
+            },
+            "product_list": {
+                "type": "product_list",
+                "blocks": {
+                    "product_1": {
+                        "type": "product",
+                        "settings": {
+                            "product": ""
+                        }
+                    },
+                    "product_2": {
+                        "type": "product",
+                        "settings": {
+                            "product": ""
+                        }
+
+                    },
+                    "product_3": {
+                        "type": "product",
+                        "settings": {
+                            "product": ""
+                        }
+                    },
+                    "product_4": {
+                        "type": "product",
+                        "settings": {
+                            "product": ""
+                        }
+
+                    },
+                    "product_5": {
+                        "type": "product",
+                        "settings": {
+                            "product": ""
+                        }
+                    }
+                },
+                "block_order": [
+                    "product_1",
+                    "product_2",
+                    "product_3",
+                    "product_4",
+                    "product_5"
+                ],
+                
+                "settings": {
+                    "title": "<br>The Drip",
+                    "sub_title": "After wearing this award-winning Vitruvian Bladderwort, nothing will mean shit to you man. You'll be out there hurricane seeding. Mogging so hard, everyone around you looks like Chris Christie."
+                }
             }
     },
-    "order": [
-        "banner"
+   "order": [
+        "banner",
+        "product_list"
     ]
 }
